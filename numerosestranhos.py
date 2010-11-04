@@ -2,7 +2,7 @@ import unittest
 
 def is_estranho(numero):
     def get_divisores(num):
-        return [i for i in range(1,num) if num % i == 0]
+        return [i for i in range(1,num/2+1) if num % i == 0]
     
     def sum_array(lista):
         soma = 0
@@ -14,7 +14,7 @@ def is_estranho(numero):
     return sum_array(get_divisores(numero)) > numero
 
 def estranhos_ate(numero):
-    '''Retorna a lista de números estranhos'''
+    '''Retorna a lista de numeros estranhos'''
     
     return [i for i in range(numero + 1) if is_estranho(i)]
  
