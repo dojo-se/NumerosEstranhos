@@ -3,16 +3,13 @@ import unittest
 def is_estranho(numero):
     def get_divisores(num):
         lista = []
-        
         for i in range(1,num):
             if num % i == 0:
                 lista.append(i)  
-                #print i 
         return lista 
     
     def sum_array(lista):
         soma = 0
-        #print lista
         for i in lista :
             soma += i
         return soma
@@ -21,20 +18,21 @@ def is_estranho(numero):
         return True
     else:
         return False
-        
 
-def lista_estranhos (numero):
-    return False    
+def estranhos_ate(numero):
+    lista = []
+    for i in range(numero + 1):
+        if (is_estranho(i)):
+           lista.append(i)
+    return lista    
  
 class TestNumerosEstranhos(unittest.TestCase):
-    def test_100(self):
-        self.assertEqual(True, is_estranho(100))
-        
-    def test_13(self):
-        self.assertEqual(False, is_estranho(13))        
-
     def test_listaNumeros(self):
-        self.assertEqual(False, lista_estranhos(13))        
+        self.assertEqual([12], estranhos_ate(12))        
+        
+    def test_listaNumerosVazio(self):
+        self.assertEqual([], estranhos_ate(5))        
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()	
