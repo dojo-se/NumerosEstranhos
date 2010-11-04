@@ -22,7 +22,9 @@ def is_estranho(numero):
     else:
         return False
         
-    
+
+def lista_estranhos (numero):
+    return False    
  
 class TestNumerosEstranhos(unittest.TestCase):
     def test_100(self):
@@ -30,6 +32,9 @@ class TestNumerosEstranhos(unittest.TestCase):
         
     def test_13(self):
         self.assertEqual(False, is_estranho(13))        
+
+    def test_listaNumeros(self):
+        self.assertEqual(False, lista_estranhos(13))        
 
 if __name__ == '__main__':
     unittest.main()
