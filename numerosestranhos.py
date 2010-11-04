@@ -25,6 +25,9 @@ def is_estranho(numero):
 class TestNumerosEstranhos(unittest.TestCase):
     def test_100(self):
         self.assertEqual(True, is_estranho(100))
+        
+    def test_13(self):
+        self.assertEqual(False, is_estranho(13))        
 
 if __name__ == '__main__':
     unittest.main()
