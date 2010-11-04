@@ -19,6 +19,8 @@ def is_estranho(numero):
         
     if sum_array(get_divisores(numero)) > numero:  
         return True
+    else:
+        return False
         
     
  
