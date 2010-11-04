@@ -14,10 +14,7 @@ def is_estranho(numero):
             soma += i
         return soma
         
-    if sum_array(get_divisores(numero)) > numero:  
-        return True
-    else:
-        return False
+    return sum_array(get_divisores(numero)) > numero
 
 def estranhos_ate(numero):
     lista = []
@@ -27,11 +24,14 @@ def estranhos_ate(numero):
     return lista    
  
 class TestNumerosEstranhos(unittest.TestCase):
-    def test_listaNumeros(self):
+    def test_lista_numeros_estranhos_ate_12(self):
         self.assertEqual([12], estranhos_ate(12))        
         
-    def test_listaNumerosVazio(self):
-        self.assertEqual([], estranhos_ate(5))        
+    def test_lista_numeros_estranhos_ate_5(self):
+        self.assertEqual([], estranhos_ate(5))
+        
+    def test_lista_numeros_estranhos_ate_19(self):
+        self.assertEqual([12,18], estranhos_ate(19))        
 
 
 if __name__ == '__main__':
