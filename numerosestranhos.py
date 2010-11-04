@@ -2,26 +2,21 @@ import unittest
 
 def is_estranho(numero):
     def get_divisores(num):
-        lista = []
-        for i in range(1,num):
-            if num % i == 0:
-                lista.append(i)  
-        return lista 
+        return [i for i in range(1,num) if num % i == 0]
     
     def sum_array(lista):
         soma = 0
-        for i in lista :
+        for i in lista:
             soma += i
+            
         return soma
         
     return sum_array(get_divisores(numero)) > numero
 
 def estranhos_ate(numero):
-    lista = []
-    for i in range(numero + 1):
-        if (is_estranho(i)):
-           lista.append(i)
-    return lista    
+    '''Retorna a lista de números estranhos'''
+    
+    return [i for i in range(numero + 1) if is_estranho(i)]
  
 class TestNumerosEstranhos(unittest.TestCase):
     def test_lista_numeros_estranhos_ate_12(self):
